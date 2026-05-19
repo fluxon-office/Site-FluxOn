@@ -1,0 +1,168 @@
+.depoimentos {
+  background:
+    radial-gradient(circle at 82% 8%, rgba(0,229,255,0.065), transparent 30%),
+    linear-gradient(180deg, #050915 0%, #020617 100%);
+  position: relative;
+  overflow: hidden;
+}
+
+.depoimentos::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background:
+    linear-gradient(90deg, rgba(0,229,255,0.04) 0, rgba(0,229,255,0.04) 1px, transparent 1px, transparent 120px),
+    linear-gradient(180deg, rgba(0,229,255,0.03) 0, rgba(0,229,255,0.03) 1px, transparent 1px, transparent 120px);
+  opacity: 0.11;
+  pointer-events: none;
+}
+
+.dep-heading {
+  max-width: 940px;
+  margin-bottom: 76px;
+  font-family: var(--font-display);
+  font-size: clamp(44px, 5vw, 74px);
+  font-weight: 800;
+  letter-spacing: 0;
+  line-height: 1.04;
+  color: #fff;
+  text-wrap: balance;
+}
+
+.dep-heading em {
+  font-style: normal;
+  color: var(--blue-light);
+  text-shadow: 0 0 26px rgba(0,229,255,0.18);
+}
+
+.dep-wall {
+  position: relative;
+  z-index: 1;
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 24px;
+}
+
+.dep-card {
+  position: relative;
+  min-height: 318px;
+  padding: 1px;
+  border-radius: 30px;
+  border: 1px solid rgba(148,163,184,0.13);
+  background:
+    linear-gradient(145deg, rgba(15,23,42,0.9), rgba(2,6,23,0.94)),
+    rgba(7, 11, 24, 0.9);
+  box-shadow: inset 0 1px 0 rgba(255,255,255,0.055), 0 24px 58px rgba(0,0,0,0.25);
+  overflow: hidden;
+  transition: transform .32s ease, border-color .32s ease, box-shadow .32s ease, background .32s ease;
+}
+
+.dep-card::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background:
+    radial-gradient(circle at 18% 0%, color-mix(in srgb, var(--dep-accent) 14%, transparent), transparent 34%),
+    linear-gradient(120deg, transparent, rgba(0,229,255,0.04), transparent);
+  pointer-events: none;
+}
+
+.dep-card:hover {
+  transform: translateY(-6px) scale(1.008);
+  border-color: color-mix(in srgb, var(--dep-accent) 36%, rgba(255,255,255,0.12));
+  box-shadow:
+    inset 0 1px 0 rgba(255,255,255,0.08),
+    0 32px 72px rgba(0,0,0,0.34),
+    0 0 0 4px color-mix(in srgb, var(--dep-accent) 8%, transparent);
+}
+
+.dep-bar {
+  position: absolute;
+  top: 24px;
+  left: 24px;
+  z-index: 2;
+  display: block;
+  width: 88px;
+  height: 5px;
+  border-radius: 999px;
+  background: linear-gradient(90deg, #b7f1ff, var(--dep-accent));
+  box-shadow: 0 0 18px color-mix(in srgb, var(--dep-accent) 24%, transparent);
+}
+
+.dep-card-inner {
+  position: relative;
+  z-index: 1;
+  height: 100%;
+  padding: 52px 34px 30px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.dep-text {
+  max-width: 34ch;
+  margin-bottom: 34px;
+  color: rgba(243,244,246,0.9);
+  font-family: var(--font-body);
+  font-size: clamp(18px, 1.7vw, 22px);
+  font-weight: 500;
+  line-height: 1.48;
+  letter-spacing: 0;
+}
+
+.dep-author {
+  display: flex;
+  align-items: center;
+  gap: 18px;
+  padding-top: 22px;
+  border-top: 1px solid rgba(148,163,184,0.12);
+}
+
+.dep-avatar {
+  width: 70px;
+  height: 70px;
+  border-radius: 22px;
+  object-fit: cover;
+  object-position: center center;
+  display: block;
+  flex-shrink: 0;
+  border: 2px solid color-mix(in srgb, var(--dep-accent) 42%, rgba(255,255,255,0.18));
+  box-shadow: 0 14px 28px rgba(0,0,0,0.28);
+  transition: transform .28s ease, border-radius .28s ease, border-color .28s ease;
+}
+
+.dep-card:hover .dep-avatar {
+  transform: scale(1.04);
+  border-radius: 18px;
+  border-color: color-mix(in srgb, var(--dep-accent) 64%, rgba(255,255,255,0.18));
+}
+
+.dep-card:nth-child(1) .dep-avatar,
+.dep-card:nth-child(2) .dep-avatar,
+.dep-card:nth-child(4) .dep-avatar {
+  object-position: center 24%;
+}
+
+.dep-name {
+  margin-bottom: 6px;
+  font-family: var(--font-display);
+  font-size: 20px;
+  font-weight: 800;
+  color: var(--dep-accent);
+  line-height: 1.15;
+}
+
+.dep-role {
+  display: inline-flex;
+  align-items: center;
+  gap: 7px;
+  color: rgba(226,232,240,0.62);
+  font-size: 12px;
+  line-height: 1.35;
+}
+
+.dep-role span {
+  display: inline-flex;
+  color: var(--dep-accent);
+  opacity: .85;
+}

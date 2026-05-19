@@ -1,0 +1,11 @@
+/* ── FOOTER ── */
+.footer {
+  background: var(--bg-card); padding: 60px;
+  display: flex; justify-content: space-between; align-items: center;
+  border-top: 1px solid var(--border); flex-wrap: wrap; gap: 24px;
+}
+.footer-logo { height: 100px; width: auto; }
+.footer-copy { color: var(--muted); font-size: 13px; }
+.footer-links { display: flex; gap: 32px; }
+.footer-links a { color: var(--muted); font-size: 13px; text-decoration: none; transition: color .2s; }
+.footer-links a:hover { color: var(--text); }

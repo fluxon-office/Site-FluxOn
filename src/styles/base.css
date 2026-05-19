@@ -1,0 +1,47 @@
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+:root {
+  --bg: #060A17;
+  --bg-card: rgba(255, 255, 255, 0.02);
+  --text: #F3F4F6;
+  --muted: #9CA3AF;
+  --blue: #0055ff;
+  --blue-light: #00e5ff;
+  --blue-text: #3b82f6;
+  --accent: #0055ff;
+  --border: rgba(255, 255, 255, 0.08);
+  --bg-hover: rgba(255, 255, 255, 0.04);
+  --font-display: 'Outfit', sans-serif;
+  --font-body: 'Inter', sans-serif;
+  --font-mono: 'Fira Code', monospace;
+}
+
+html { scroll-behavior: smooth; }
+
+#root {
+  position: relative;
+  z-index: 1;
+}
+
+body {
+  background: var(--bg);
+  color: var(--text);
+  font-family: var(--font-body);
+  font-size: 16px;
+  line-height: 1.6;
+  overflow-x: hidden;
+  cursor: none;
+  -webkit-font-smoothing: antialiased;
+  text-rendering: optimizeLegibility;
+}
+
+a { color: inherit; }
+
+section { position: relative; }
+.container { max-width: 1200px; margin: 0 auto; padding: 0 60px; }
+.section-pad { padding: 128px 0; }
+.section-label {
+  font-size: 11px; letter-spacing: .2em; text-transform: uppercase; color: var(--blue-light);
+  margin-bottom: 20px; display: flex; align-items: center; gap: 10px;
+}
+.section-label::before { content: ''; display: block; width: 20px; height: 1px; background: var(--blue); }

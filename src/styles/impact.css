@@ -1,0 +1,188 @@
+.impact {
+  background:
+    radial-gradient(circle at 82% 8%, rgba(0,229,255,0.07), transparent 30%),
+    linear-gradient(180deg, #050915 0%, #020617 100%);
+  overflow: hidden;
+}
+
+.impact-head {
+  display: grid;
+  gap: 8px;
+  margin-bottom: 64px;
+}
+
+.impact-heading {
+  max-width: 900px;
+  font-family: var(--font-display);
+  font-size: clamp(46px, 5.2vw, 76px);
+  font-weight: 800;
+  line-height: 1.02;
+  letter-spacing: 0;
+  color: #fff;
+}
+
+.impact-heading em {
+  font-style: normal;
+  color: rgba(203,213,225,0.84);
+}
+
+.impact-inner {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 22px;
+}
+
+.impact-cell {
+  position: relative;
+  min-height: 360px;
+  padding: 30px;
+  border: 1px solid rgba(148,163,184,0.13);
+  border-radius: 28px;
+  background:
+    linear-gradient(155deg, rgba(15,23,42,0.9), rgba(2,6,23,0.94)),
+    rgba(7, 11, 24, 0.9);
+  box-shadow: inset 0 1px 0 rgba(255,255,255,0.055), 0 24px 58px rgba(0,0,0,0.25);
+  overflow: hidden;
+  transition: transform .32s ease, border-color .32s ease, box-shadow .32s ease, background .32s ease;
+}
+
+.impact-cell::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background:
+    radial-gradient(circle at 26% 0%, rgba(0,229,255,0.1), transparent 34%),
+    linear-gradient(120deg, transparent, rgba(0,229,255,0.055), transparent);
+  opacity: .72;
+  pointer-events: none;
+}
+
+.impact-cell:hover {
+  transform: translateY(-7px) scale(1.012);
+  border-color: rgba(0,229,255,0.34);
+  box-shadow: inset 0 1px 0 rgba(255,255,255,0.08), 0 34px 78px rgba(0,0,0,0.35), 0 0 0 4px rgba(0,229,255,0.04);
+}
+
+.impact-card-top,
+.impact-title,
+.impact-desc,
+.impact-meter,
+.impact-arrow {
+  position: relative;
+  z-index: 1;
+}
+
+.impact-card-top {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 40px;
+}
+
+.impact-num {
+  font-family: var(--font-display);
+  font-size: 34px;
+  font-weight: 800;
+  line-height: 1;
+  color: var(--blue-light);
+  text-shadow: 0 0 24px rgba(0,229,255,0.18);
+}
+
+.impact-icon {
+  display: inline-flex;
+  width: 56px;
+  height: 56px;
+  align-items: center;
+  justify-content: center;
+  border-radius: 18px;
+  color: var(--blue-light);
+  background:
+    linear-gradient(145deg, rgba(0,229,255,0.12), rgba(0,85,255,0.08)),
+    rgba(255,255,255,0.026);
+  border: 1px solid rgba(0,229,255,0.18);
+  box-shadow: inset 0 1px 0 rgba(255,255,255,0.08), 0 14px 26px rgba(0,85,255,0.14);
+  transition: transform .32s ease, color .32s ease, border-color .32s ease, box-shadow .32s ease;
+}
+
+.impact-icon svg {
+  transition: transform .32s ease, stroke-width .32s ease;
+}
+
+.impact-cell:hover .impact-icon {
+  transform: scale(1.08) rotate(-3deg);
+  color: #fff;
+  border-color: rgba(0,229,255,0.36);
+  box-shadow: inset 0 1px 0 rgba(255,255,255,0.12), 0 18px 36px rgba(0,85,255,0.2), 0 0 24px rgba(0,229,255,0.12);
+}
+
+.impact-cell:hover .impact-icon svg {
+  transform: translateX(1px);
+  stroke-width: 2.1;
+}
+
+.impact-title {
+  font-family: var(--font-display);
+  font-size: clamp(24px, 2vw, 30px);
+  line-height: 1.12;
+  letter-spacing: 0;
+  font-weight: 800;
+  color: #fff;
+  max-width: 12ch;
+  transition: color .28s ease;
+}
+
+.impact-cell:hover .impact-title {
+  color: #8ff3ff;
+}
+
+.impact-desc {
+  color: rgba(226,232,240,0.84);
+  margin-top: 18px;
+  font-size: 15px;
+  line-height: 1.75;
+  max-width: 32ch;
+  transition: color .28s ease;
+}
+
+.impact-cell:hover .impact-desc {
+  color: rgba(248,250,252,0.94);
+}
+
+.impact-meter {
+  height: 6px;
+  margin-top: 30px;
+  border-radius: 999px;
+  background: rgba(148,163,184,0.12);
+  overflow: hidden;
+}
+
+.impact-meter span {
+  display: block;
+  height: 100%;
+  border-radius: inherit;
+  background: linear-gradient(90deg, var(--blue), var(--blue-light));
+  box-shadow: 0 0 18px rgba(0,229,255,0.28);
+  transition: width .34s ease, box-shadow .34s ease;
+}
+
+.impact-cell:hover .impact-meter span {
+  width: 100% !important;
+  box-shadow: 0 0 26px rgba(0,229,255,0.42);
+}
+
+.impact-arrow {
+  position: absolute;
+  right: 28px;
+  bottom: 24px;
+  color: rgba(0,229,255,0.62);
+  font-weight: 800;
+  transform: translateX(-8px);
+  opacity: .48;
+  transition: transform .28s ease, opacity .28s ease, color .28s ease;
+}
+
+.impact-cell:hover .impact-arrow {
+  transform: translateX(0);
+  opacity: 1;
+  color: var(--blue-light);
+}
