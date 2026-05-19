@@ -1,30 +1,30 @@
-# FluxON Website
+# FluxON
 
-Site institucional da FluxON, desenvolvido em React e Vite, com deploy automatizado via GitHub Pages.
+Presenca digital da FluxON para apresentar nossa abordagem de diagnostico, organizacao operacional e automacao aplicada a negocios que dependem de agenda, atendimento e rotina comercial.
 
-## Stack
+A FluxON ajuda empresas a enxergar onde a operacao trava antes de implementar tecnologia. O foco esta em reduzir perda de leads, falhas de confirmacao, retrabalho manual, informacao espalhada e falta de clareza entre equipe, agenda e atendimento.
 
-- React 19
-- Vite 8
+## O Que Resolvemos
+
+- Falta de visibilidade sobre gargalos operacionais.
+- Rotinas dependentes de mensagens manuais e repasses informais.
+- Perda de atendimento por agenda desorganizada ou confirmacao falha.
+- Processos comerciais sem padrao claro entre lead, equipe e cliente.
+- Automacoes implementadas sem diagnostico real da operacao.
+
+## Abordagem
+
+O trabalho parte de uma leitura objetiva da rotina atual. A partir disso, a FluxON identifica prioridades, organiza fluxos e aplica automacao somente onde ela melhora controle, velocidade e previsibilidade.
+
+## Tecnologia
+
+Este projeto usa uma stack enxuta para entregar uma experiencia rapida, responsiva e facil de manter:
+
+- React
+- Vite
 - ESLint
 - GitHub Actions
 - GitHub Pages
-
-## Estrutura
-
-```text
-public/                      Arquivos públicos estáticos
-public/brand/                Marca e identidade visual
-public/media/                Mídias públicas
-src/                         Código-fonte da aplicação
-src/assets/showcases/        Imagens de produtos, painéis e entregas
-src/assets/team/             Fotos da equipe
-src/assets/testimonials/     Fotos de depoimentos
-src/components/              Componentes React
-src/hooks/                   Hooks compartilhados
-src/styles/                  Estilos por seção
-src/utils/                   Utilitários de analytics e segurança
-```
 
 ## Desenvolvimento
 
@@ -33,7 +33,7 @@ npm ci
 npm run dev
 ```
 
-## Validação
+## Validacao
 
 ```bash
 npm run lint
@@ -42,10 +42,14 @@ npm run build
 
 ## Deploy
 
-O deploy roda automaticamente pelo workflow `.github/workflows/deploy-pages.yml` em todo push para `main`.
+O deploy e executado automaticamente pelo GitHub Actions a cada atualizacao na branch `main`.
 
-Para GitHub Pages, o workflow executa `npm run build:pages`, usando a base `/Site-FluxOn/`. Para desenvolvimento local e outros ambientes, a base permanece `/`.
+Para gerar localmente o mesmo build usado no GitHub Pages:
 
-## Segurança
+```bash
+npm run build:pages
+```
 
-Este repositório é público e deve conter apenas o necessário para renderizar a página. Variáveis de ambiente, endpoints privados, tokens, integrações server-side e credenciais não devem ser versionados.
+## Politica Do Repositorio
+
+Este repositorio contem somente os arquivos necessarios para apresentar e manter a pagina.
